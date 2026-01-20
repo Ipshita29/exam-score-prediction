@@ -20,6 +20,13 @@ def plot_distributions(df):
     plt.savefig('exam_score_dist.png')
     plt.show()
 
+def categorical_analysis(df):
+    categorical_columns = df.select_dtypes(include=['object']).columns
+    for col in categorical_columns:
+        print(f"\nValue Counts for {col}:")
+        print(df[col].value_counts())
+
 if __name__ == "__main__":
     df = load_and_explore("data/Exam_Score_Prediction.csv")
     plot_distributions(df)
+    categorical_analysis(df)
