@@ -26,7 +26,19 @@ def categorical_analysis(df):
         print(f"\nValue Counts for {col}:")
         print(df[col].value_counts())
 
+def correlation_analysis(df):
+    numeric_df = df.select_dtypes(include=[np.number])
+    corr = numeric_df.corr()
+    print("\nCorrelation Matrix:")
+    print(corr)
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(corr, annot=True, cmap='coolwarm', fmt=".2f")
+    plt.title('Correlation Heatmap')
+    plt.savefig('correlation_heatmap.png')
+    plt.show()
+
 if __name__ == "__main__":
     df = load_and_explore("data/Exam_Score_Prediction.csv")
     plot_distributions(df)
     categorical_analysis(df)
+    correlation_analysis(df)
