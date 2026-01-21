@@ -27,5 +27,15 @@ if __name__ == "__main__":
     scaler = StandardScaler()
     num_cols = ['age', 'study_hours', 'class_attendance', 'sleep_hours']
     df[num_cols] = scaler.fit_transform(df[num_cols])
-    print("Columns after feature scaling:")
-    print(df[num_cols].head())
+    
+    # Simple outlier capping (99th percentile)
+    for col in num_cols:
+        upper_limit = df[col].quantile(0.99)
+        df[col] = np.where(df[col] > upper_limit, upper_limit, df[col])
+    
+    # Train-test split
+    from sklearn.model_selection import train_test_split
+    X = df.drop("exam_score", axis=1)
+    y = df["exam_score"]
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    print(f"Data split into {len(X_train)} training and {len(X_test)} testing samples.")
