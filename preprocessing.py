@@ -18,5 +18,14 @@ if __name__ == "__main__":
     # Label encoding ordinal/binary columns
     ordinal_cols = ['internet_access', 'sleep_quality', 'facility_rating', 'exam_difficulty']
     df = label_encode(df, ordinal_cols)
-    print("Columns after label encoding:")
-    print(df[ordinal_cols].head())
+    
+    # One-hot encoding nominal columns
+    nominal_cols = ['gender', 'course', 'study_method']
+    df = pd.get_dummies(df, columns=nominal_cols, drop_first=True)
+    
+    # Feature scaling numerical columns
+    scaler = StandardScaler()
+    num_cols = ['age', 'study_hours', 'class_attendance', 'sleep_hours']
+    df[num_cols] = scaler.fit_transform(df[num_cols])
+    print("Columns after feature scaling:")
+    print(df[num_cols].head())
