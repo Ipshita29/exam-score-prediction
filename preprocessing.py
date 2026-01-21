@@ -11,6 +11,14 @@ def label_encode(df, columns):
         df[col] = le.fit_transform(df[col])
     return df
 
+def clean_data(df):
+    # Remove duplicates
+    initial_shape = df.shape
+    df = df.drop_duplicates()
+    if df.shape != initial_shape:
+        print(f"Removed {initial_shape[0] - df.shape[0]} duplicate rows.")
+    return df
+
 if __name__ == "__main__":
     df = load_data("data/Exam_Score_Prediction.csv")
     df = df.drop("student_id", axis=1)
