@@ -5,7 +5,7 @@ This project aims to predict student exam scores based on various factors like s
 ## Current Progress
 - [x] Initial Repository Setup
 - [x] Data Exploration (EDA)
-- [ ] Data Preprocessing
+- [x] Data Preprocessing
 - [ ] Model Training (Baseline)
 - [ ] Advanced Modeling
 - [ ] Deployment Scripts
@@ -14,6 +14,13 @@ This project aims to predict student exam scores based on various factors like s
 - Exam scores follow a normal distribution centered around 50-60.
 - Categorical features like 'study_method' and 'sleep_quality' show interesting variances but require encoding.
 - Strong correlations observed between study hours and class attendance with the final score.
+
+## Preprocessing & Feature Engineering
+- **Label Encoding:** Applied to ordinal features like `internet_access`, `sleep_quality`, etc.
+- **One-Hot Encoding:** Applied to nominal features like `gender`, `course`, and `study_method`.
+- **Scaling:** Numerical features scaled using `StandardScaler`.
+- **Outliers:** Handled using 99th percentile capping.
+- **Splitting:** Data split 80/20 for training and testing.
 
 This project predicts student exam scores based on study habits, attendance, sleep quality, course type, and other lifestyle or academic factors.
 The dataset contains various features such as hours of study, class attendance, sleep behavior, difficulty level.
