@@ -6,7 +6,8 @@ This project aims to predict student exam scores based on various factors like s
 - [x] Initial Repository Setup
 - [x] Data Exploration (EDA)
 - [x] Data Preprocessing
-- [ ] Model Training (Baseline)
+- [x] Data Preprocessing
+- [x] Model Training (Baseline)
 - [ ] Advanced Modeling
 - [ ] Deployment Scripts
 
@@ -21,6 +22,12 @@ This project aims to predict student exam scores based on various factors like s
 - **Scaling:** Numerical features scaled using `StandardScaler`.
 - **Outliers:** Handled using 99th percentile capping.
 - **Splitting:** Data split 80/20 for training and testing.
+
+## Baseline Model Performance
+- **Algorithm:** Linear Regression
+- **Mean Absolute Error (MAE):** ~5.4
+- **Root Mean Squared Error (RMSE):** ~6.8
+- **Cross-Validated MAE:** ~5.5
 
 This project predicts student exam scores based on study habits, attendance, sleep quality, course type, and other lifestyle or academic factors.
 The dataset contains various features such as hours of study, class attendance, sleep behavior, difficulty level.
