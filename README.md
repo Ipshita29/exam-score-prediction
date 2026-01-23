@@ -8,7 +8,8 @@ This project aims to predict student exam scores based on various factors like s
 - [x] Data Preprocessing
 - [x] Data Preprocessing
 - [x] Model Training (Baseline)
-- [ ] Advanced Modeling
+- [x] Advanced Modeling (Random Forest)
+- [ ] Model Refinement (Gradient Boosting)
 - [ ] Deployment Scripts
 
 ## Initial EDA Findings
