@@ -24,11 +24,17 @@ This project aims to predict student exam scores based on various factors like s
 - **Outliers:** Handled using 99th percentile capping.
 - **Splitting:** Data split 80/20 for training and testing.
 
-## Baseline Model Performance
-- **Algorithm:** Linear Regression
-- **Mean Absolute Error (MAE):** ~5.4
-- **Root Mean Squared Error (RMSE):** ~6.8
-- **Cross-Validated MAE:** ~5.5
+## Model Comparison
+| Model | MAE | RMSE | CV MAE |
+| :--- | :--- | :--- | :--- |
+| Linear Regression (Baseline) | 5.42| 6.81 | 5.51 |
+| Random Forest (Optimized) | 4.15 | 5.23 | 4.28 |
+
+## Feature Importance Findings
+- **Study Hours:** Most significant predictor.
+- **Class Attendance:** Second most important factor.
+- **Exam Difficulty:** Influences score significantly.
+- **Sleep Quality:** Moderate impact.
 
 This project predicts student exam scores based on study habits, attendance, sleep quality, course type, and other lifestyle or academic factors.
 The dataset contains various features such as hours of study, class attendance, sleep behavior, difficulty level.
