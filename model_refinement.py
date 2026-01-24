@@ -13,16 +13,21 @@ def train_gbr(X_train, y_train):
     gbr.fit(X_train, y_train)
     return gbr
 
-def plot_residuals(model, X_test, y_test):
-    y_pred = model.predict(X_test)
-    residuals = y_test - y_pred
+def plot_learning_curves(model, X, y):
+    from sklearn.model_selection import learning_curve
+    train_sizes, train_scores, test_scores = learning_curve(model, X, y, cv=5, scoring='neg_mean_absolute_error', train_sizes=np.linspace(0.1, 1.0, 10))
+    
+    train_scores_mean = -train_scores.mean(axis=1)
+    test_scores_mean = -test_scores.mean(axis=1)
     
     plt.figure(figsize=(10, 6))
-    sns.histplot(residuals, kde=True, color='purple')
-    plt.title('Residuals Distribution (Gradient Boosting)')
-    plt.xlabel('Residual')
-    plt.ylabel('Frequency')
-    plt.savefig('residuals_dist.png')
+    plt.plot(train_sizes, train_scores_mean, 'o-', color="r", label="Training Score")
+    plt.plot(train_sizes, test_scores_mean, 'o-', color="g", label="Cross-validation Score")
+    plt.title('Learning Curves (Gradient Boosting)')
+    plt.xlabel('Training Samples')
+    plt.ylabel('MAE')
+    plt.legend(loc="best")
+    plt.savefig('learning_curves.png')
     plt.show()
 
 if __name__ == "__main__":
