@@ -9,7 +9,20 @@ This project aims to predict student exam scores based on various factors like s
 - [x] Model Training (Baseline)
 - [x] Advanced Modeling (Random Forest)
 - [x] Model Refinement (Gradient Boosting)
+- [x] Production Scripts (Train/Predict)
 - [ ] Deployment Scripts
+
+## Usage Instructions
+
+### Training the Model
+```bash
+python train.py --data data/Exam_Score_Prediction.csv --output final_model.pkl
+```
+
+### Making Predictions
+```bash
+python predict.py --model final_model.pkl --data data/sample_input.csv --output predictions.csv
+```
 
 ## Initial EDA Findings
 - Exam scores follow a normal distribution centered around 50-60.
