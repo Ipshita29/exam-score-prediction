@@ -1,0 +1,6 @@
+age,gender,course,study_hours,class_attendance,internet_access,sleep_hours,sleep_quality,study_method,facility_rating,exam_difficulty
+18,female,diploma,5.5,85.0,yes,7.0,good,self,high,moderate
+21,male,b.sc,7.0,90.0,yes,8.0,good,coaching,high,hard
+19,other,bca,4.0,70.0,no,6.0,average,online videos,medium,moderate
+20,female,diploma,2.5,60.0,yes,5.0,poor,self,low,hard
+22,male,b.sc,8.0,95.0,yes,8.5,good,coaching,high,moderate
