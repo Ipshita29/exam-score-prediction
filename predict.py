@@ -1,9 +1,12 @@
-import pandas as pd
 import pickle
 import argparse
+import logging
 from preprocessing import load_data, label_encode
 
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 def predict(model_path, data_path, output_path):
+    logging.info(f"Loading model from {model_path}...")
     with open(model_path, 'rb') as f:
         model = pickle.load(f)
     
