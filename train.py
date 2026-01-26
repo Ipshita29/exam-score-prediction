@@ -1,11 +1,12 @@
-import pandas as pd
 import pickle
 import argparse
+import logging
 from preprocessing import load_data, clean_data, label_encode
-from model_refinement import train_gbr
-from sklearn.model_selection import train_test_split
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def train(data_path, model_output):
+    logging.info(f"Loading data from {data_path}...")
     df = load_data(data_path)
     df = clean_data(df)
     df = df.drop("student_id", axis=1)
