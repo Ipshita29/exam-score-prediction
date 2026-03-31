@@ -24,10 +24,8 @@ def cross_validate(X, y):
     return -scores.mean()
 
 if __name__ == "__main__":
-    # Simplified loading for baseline test
     df = load_data("data/Exam_Score_Prediction.csv")
     df = df.drop("student_id", axis=1)
-    # Basic encoding for baseline
     categorical_cols = df.select_dtypes(include=['object']).columns
     df = label_encode(df, categorical_cols)
     

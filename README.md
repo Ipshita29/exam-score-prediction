@@ -2,16 +2,6 @@
 
 This project aims to predict student exam scores based on various factors like study hours, attendance, sleep quality, and more using machine learning models.
 
-## Current Progress
-- [x] Initial Repository Setup
-- [x] Data Exploration (EDA)
-- [x] Data Preprocessing
-- [x] Model Training (Baseline)
-- [x] Advanced Modeling (Random Forest)
-- [x] Model Refinement (Gradient Boosting)
-- [x] Production Scripts (Train/Predict)
-- [ ] Deployment Scripts
-
 ## Usage Instructions
 
 ### Training the Model
@@ -25,7 +15,6 @@ python predict.py --model final_model.pkl --data data/sample_input.csv --output 
 ```
 
 ## Initial EDA Findings
-- Exam scores follow a normal distribution centered around 50-60.
 - Categorical features like 'study_method' and 'sleep_quality' show interesting variances but require encoding.
 - Strong correlations observed between study hours and class attendance with the final score.
 
@@ -39,8 +28,8 @@ python predict.py --model final_model.pkl --data data/sample_input.csv --output 
 ## Model Comparison
 | Model | MAE | RMSE | CV MAE |
 | :--- | :--- | :--- | :--- |
-| Linear Regression (Baseline) | 5.42| 6.81 | 5.51 |
-| Random Forest (Optimized) | 4.15 | 5.23 | 4.28 |
+| Linear Regression | 5.42| 6.81 | 5.51 |
+| Random Forest | 4.15 | 5.23 | 4.28 |
 
 ## Feature Importance Findings
 - **Study Hours:** Most significant predictor.
@@ -49,4 +38,3 @@ python predict.py --model final_model.pkl --data data/sample_input.csv --output 
 - **Sleep Quality:** Moderate impact.
 
 This project predicts student exam scores based on study habits, attendance, sleep quality, course type, and other lifestyle or academic factors.
-The dataset contains various features such as hours of study, class attendance, sleep behavior, difficulty level.

@@ -23,7 +23,6 @@ if __name__ == "__main__":
     
     df = load_data("data/Exam_Score_Prediction.csv")
     df = df.drop(["student_id", "exam_score"], axis=1)
-    # Basic encoding for feature names
     categorical_cols = df.select_dtypes(include=['object']).columns
     df = label_encode(df, categorical_cols)
     

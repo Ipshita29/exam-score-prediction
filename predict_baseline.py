@@ -10,6 +10,4 @@ def predict(input_data):
     return prediction
 
 if __name__ == "__main__":
-    # Example prediction
-    # Assuming input_data is a DataFrame with same columns as training (X)
     print("Baseline Prediction Script Ready.")
